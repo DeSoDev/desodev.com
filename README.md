@@ -6,3 +6,4 @@ This site is created using [Astro](https://astro.build).
 
 It uses a Cloudflare Workers api, which retrieves all contributors.
 
+* [DesoDev Homepage](https://desodev.com/)
