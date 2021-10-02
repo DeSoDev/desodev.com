@@ -1,0 +1,30 @@
+---
+import ProfileLink from '../components/ProfileLink.astro'
+const { creator, verified } = Astro.props;
+const urls=[{ icon: 'github', url: `https://github.com/${creator[0]}` }]
+if ( verified!=='' ) {
+    urls.push({icon: 'deso', url: `https://bitclout.com/u/${verified}`})
+}
+---
+<style>
+.disable-select {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+</style>
+
+<div class="relative m-3">
+    <div target="_blank" class={ (verified=='' ? "border-gray-900" : "border-blue-500 ") +"flex items-center justify-center w-24 h-24 overflow-hidden rounded-full border-4 shadow hover:border-0 hover:border-gray-200 cursor-pointer hover:w-24 hover:h-24 group"}>
+        <img src="{creator[1]}" alt="{creator[0]}"/>
+        <span class="disable-select hidden group-hover:block absolute bottom-3 bg-gradient-to-r from-black text-white rounded-full px-3 to-transparent mx-auto text-center">
+            {verified=='' ? creator[0] :  verified}
+        </span>
+        <div class="flex absolute top-4 justify-between w-full">
+        { urls.map((link)=>(
+            <ProfileLink type={link.icon} url={link.url} />
+        ))}
+        </div>
+    </div>
+</div>

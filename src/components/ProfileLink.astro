@@ -1,0 +1,7 @@
+---
+const { type, url } = Astro.props;
+---
+
+<a class={"hidden group-hover:block w-10 h-10 border-1 hover:bg-white rounded-full mx-auto "+type} href={url}>
+<img src={"/img/"+type+".png"} />
+</a>
