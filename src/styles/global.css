@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sm\:text-6xl {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.text-4xl {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.px-10 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.py-5 {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+.ml-5 {
+    margin-left: 1rem;
+}
+
+.mt-20 {
+    margin-top: 3rem;
+}
+
+@media (min-width: 640px){
+    .text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+    
+    .px-10 {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    
+    .py-5 {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .ml-5 {
+        margin-left: 1.25rem;
+    }    
+
+    .mt-20 {
+        margin-top: 5rem;
+    }
+        
+}
