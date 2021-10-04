@@ -36,6 +36,26 @@
 		) ) }
 	</div>
 
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// randomize position of contributors after page is loaded on client side
+
+			let conributorsList = document.querySelectorAll('.contributor')
+
+			let numberOfContributors = conributorsList.length
+
+			let postions = [ ...Array(numberOfContributors).keys() ];
+
+			let shuffle = a => a.length ? a.splice(~~(Math.random()*a.length),1).concat(shuffle(a)) : a;
+
+			postions = shuffle(postions)
+
+			conributorsList.forEach((contributor, index) => {
+				contributor.style.order = `${postions[index]}`;
+			});
+		});
+	</script>
+
 	</div>
 </body>
 
